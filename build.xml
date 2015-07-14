@@ -1,0 +1,20 @@
+<project name="MySmartCardIOShell" default="build-jar">
+	<target name="init">
+		<mkdir dir="bin" />
+		<mkdir dir="dist" />
+	</target>
+
+	<target name="build-jar">
+		<jar destfile="dist/MySmartCardIOShell.jar" basedir="bin" includes="**" excludes="**/Test.xx">
+			<manifest>
+				<attribute name="Main-Class" value="MySmartCardIOShell" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="distribute" depends="build-jar">
+		<!--copy todir="P:/_VM/MySmartCardIO">
+			<fileset dir="dist" includes="**/*.jar" />
+			<fileset dir="bin" />
+		</copy -->
+	</target>
+</project>
